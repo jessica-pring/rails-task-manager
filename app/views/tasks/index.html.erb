@@ -1,0 +1,11 @@
+<h2>All Tasks</h2>
+<div>
+  <% @tasks.each do |task| %>
+    <span><%= task.completed ? "☑" : "◻" %> 
+    <%= link_to "#{task.title}", task_path(task) %></span>
+    <br>
+  <% end %>
+</div>
+<div class="card mt-3 p-2">
+  <%= link_to 'Add a new task', tasks_new_path %>
+</div>

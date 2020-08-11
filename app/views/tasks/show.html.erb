@@ -1,0 +1,15 @@
+<h2><%= @task.title %></h2>
+
+<h6><%= @task.completed ? "☑ Completed" : "◻ To do" %></h6>
+<p class="card p-4"><%= @task.details %></p>
+
+<p><%= link_to 'Edit this task', edit_task_path, :class => "btn btn-outline-primary" %></p>
+
+<p><%= link_to "Delete #{@task.title}",
+            task_path(@task),
+            :class => "btn btn-outline-danger",
+            method: :delete,
+            data: { confirm: "Are you sure?" } %></p>
+<hr>
+
+<p><%= link_to 'Go back to Task list', tasks_path, :class => "btn btn-secondary" %></p>
